@@ -1,0 +1,14 @@
+{
+    "market": "Market",
+    "markets": "Markets",
+    "no_internet_connection": "No internet connection, please check it and try it again.",
+    "ratings": "Ratings",
+    "settings": "Settings",
+    "switch_to_day_mode": "Switch to Day Mode",
+    "switch_to_night_mode": "Switch to Night Mode",
+    "1_week": "1 Week",
+    "1_month": "1 Month",
+    "6_months": "6 Months",
+    "chart" : "Chart",
+    "loading" : "Loading"
+}
