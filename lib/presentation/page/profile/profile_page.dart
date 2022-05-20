@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:grocery_app/backbone/bloc_status.dart';
 import 'package:grocery_app/backbone/dependency_injection.dart' as di;
 import 'package:grocery_app/presentation/bloc/settings/bloc.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../widget/rounded_button.dart';
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
@@ -80,6 +82,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
 
+                  RoundedButton(
+                    text: "SIGNOUT",
+                    press: () {
+                      AutoRouter.of(context).replaceNamed("presentation/welcome_screen");
+                    },
+                  ),
                 ],
               );
             },

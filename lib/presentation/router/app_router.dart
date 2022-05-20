@@ -1,16 +1,34 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:grocery_app/presentation/page/home/home_screen.dart';
+import 'package:grocery_app/presentation/page/login/login_screen.dart';
 import 'package:grocery_app/presentation/page/navigation_page.dart';
 import 'package:grocery_app/presentation/page/profile/profile_page.dart';
 import 'package:grocery_app/presentation/page/ratings/ratings_page.dart';
+import 'package:grocery_app/presentation/page/signup/signup_screen.dart';
+import 'package:grocery_app/presentation/page/welcome/welcome_screen.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute<dynamic>>[
     AutoRoute<dynamic>(
+        path: 'presentation/welcome_screen',
+        name: 'WelcomePageRouter',
+        initial: true,
+        page: WelcomeScreen,
+        children:[]),
+    AutoRoute<dynamic>(
+      path: 'presentation/login_screen',
+      name: 'LoginPageRouter',
+      page: LoginScreen,
+    ),
+    AutoRoute<dynamic>(
+      path: 'presentation/signup_screen',
+      name: 'SignupPageRouter',
+      page: SignUpScreen,
+    ),
+    AutoRoute<dynamic>(
       path: 'presentation/navigation_page',
       name: 'NavigationPageRouter',
-      initial: true,
       page: NavigationPage,
       children: <AutoRoute<dynamic>>[
         AutoRoute<dynamic>(
