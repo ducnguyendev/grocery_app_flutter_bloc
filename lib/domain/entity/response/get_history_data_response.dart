@@ -2,7 +2,6 @@
 //
 //     final getHistoryDataResponse = getHistoryDataResponseFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 GetHistoryDataResponse getHistoryDataResponseFromJson(String str) => GetHistoryDataResponse.fromJson(json.decode(str));

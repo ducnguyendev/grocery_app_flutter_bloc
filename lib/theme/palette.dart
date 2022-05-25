@@ -13,8 +13,8 @@ class Palette {
 
   // Chart
   static const List<Color> lineGradientColors = [
-    const Color(0xff23b6e6),
-    const Color(0xff02d39a),
+     Color(0xff23b6e6),
+     Color(0xff02d39a),
   ];
 
   static const Color chartBorder = Color(0xff232d37);

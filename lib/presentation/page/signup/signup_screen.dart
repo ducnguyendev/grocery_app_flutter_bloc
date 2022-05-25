@@ -8,11 +8,12 @@ import '../../widget/rounded_input_field.dart';
 import '../../widget/rounded_password_field.dart';
 import '../login/components/background.dart';
 import '../login/login_screen.dart';
-import '../navigation_page.dart';
 import 'components/or_divider.dart';
 import 'components/social_icon.dart';
 
 class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -58,7 +59,7 @@ class SignUpScreen extends StatelessWidget {
                   );
                 },
               ),
-              OrDivider(),
+              const OrDivider(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

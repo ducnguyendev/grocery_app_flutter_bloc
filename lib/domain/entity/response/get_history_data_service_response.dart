@@ -1,4 +1,4 @@
-import 'package:grocery_app/data/model/get_history_data_response.dart';
+import 'get_history_data_response.dart';
 
 class GetHistoryDataServiceResponse {
   GetHistoryDataServiceResponse({

@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+
 import '../../widget/rounded_button.dart';
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -25,9 +26,7 @@ class _ProfilePageState extends State<ProfilePage> {
     super.initState();
   }
   String? themeType;
-  // final spots = [38000.0, 38567.1,37000.0,33000.0,40000.0,42000.0,39000.0]
-  //     .map((x) => FlSpot(x, sin(x)))
-  //     .toList();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

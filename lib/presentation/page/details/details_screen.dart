@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../domain/entity/Product.dart';
+import '../../../domain/model/product.dart';
 import '../../../../utils/constants.dart';
 import '../../widget/fav_btn.dart';
 import '../../widget/price.dart';
@@ -36,7 +36,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 });
                 Navigator.pop(context);
               },
-              child: Text("Add to Cart"),
+              child: const Text("Add to Cart"),
             ),
           ),
         ),
@@ -53,7 +53,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               children: [
                 Container(
                   width: double.infinity,
-                  color: Color(0xFFF8F8F8),
+                  color: const Color(0xFFF8F8F8),
                   child: Hero(
                     tag: widget.product.title! + _cartTag,
                     child: Image.asset(widget.product.image!),
@@ -104,7 +104,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
       leading: const BackButton(
         color: Colors.black,
       ),
-      backgroundColor: Color(0xFFF8F8F8),
+      backgroundColor: const Color(0xFFF8F8F8),
       elevation: 0,
       centerTitle: true,
       title: const Text(

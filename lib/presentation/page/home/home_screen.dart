@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../domain/entity/Product.dart';
+import '../../../domain/model/product.dart';
 import '../../../../utils/constants.dart';
 import '../details/details_screen.dart';
 import 'components/cart_details_view.dart';
@@ -13,15 +13,29 @@ import 'home_controller.dart';
 // So starting project comes with the UI
 // Run the app
 
-class HomeScreen extends StatelessWidget {
-  final controller = HomeController();
+class HomeScreen extends StatefulWidget {
 
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
+  late AnimationController _animationController;
   void _onVerticalGesture(DragUpdateDetails details) {
     if (details.primaryDelta! < -0.7) {
-      controller.changeHomeState(HomeState.cart);
+      // controller.changeHomeState(HomeState.cart);
     } else if (details.primaryDelta! > 12) {
-      controller.changeHomeState(HomeState.normal);
+      // controller.changeHomeState(HomeState.normal);
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController =
+        AnimationController(vsync: this, duration: const Duration(milliseconds: 300));
   }
 
   @override
@@ -31,9 +45,9 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         bottom: false,
         child: Container(
-          color: Color(0xFFEAEAEA),
+          color: const Color(0xFFEAEAEA),
           child: AnimatedBuilder(
-              animation: controller,
+              animation: _animationController,
               builder: (context, _) {
                 return LayoutBuilder(
                   builder: (context, BoxConstraints constraints) {
@@ -41,11 +55,11 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         AnimatedPositioned(
                           duration: panelTransition,
-                          top: controller.homeState == HomeState.normal
-                              ? headerHeight
-                              : -(constraints.maxHeight -
-                                  cartBarHeight * 2 -
-                                  headerHeight),
+                          // top: controller.homeState == HomeState.normal
+                          //     ? headerHeight
+                          //     : -(constraints.maxHeight -
+                          //         cartBarHeight * 2 -
+                          //         headerHeight),
                           left: 0,
                           right: 0,
                           height: constraints.maxHeight -
@@ -64,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             child: GridView.builder(
-                              itemCount: demo_products.length,
+                              itemCount: demoProducts.length,
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
@@ -73,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                                 crossAxisSpacing: defaultPadding,
                               ),
                               itemBuilder: (context, index) => ProductCard(
-                                product: demo_products[index],
+                                product: demoProducts[index],
                                 press: () {
                                   Navigator.push(
                                     context,
@@ -87,10 +101,10 @@ class HomeScreen extends StatelessWidget {
                                           FadeTransition(
                                         opacity: animation,
                                         child: DetailsScreen(
-                                          product: demo_products[index],
+                                          product: demoProducts[index],
                                           onProductAdd: () {
-                                            controller.addProductToCart(
-                                                demo_products[index]);
+                                            // controller.addProductToCart(
+                                            //     demoProducts[index]);
                                           },
                                         ),
                                       ),
@@ -107,30 +121,32 @@ class HomeScreen extends StatelessWidget {
                           bottom: 0,
                           left: 0,
                           right: 0,
-                          height: controller.homeState == HomeState.normal
-                              ? cartBarHeight
-                              : (constraints.maxHeight - cartBarHeight),
+                          // height: controller.homeState == HomeState.normal
+                          //     ? cartBarHeight
+                          //     : (constraints.maxHeight - cartBarHeight),
+                          height: cartBarHeight,
                           child: GestureDetector(
                             onVerticalDragUpdate: _onVerticalGesture,
                             child: Container(
                               padding: const EdgeInsets.all(defaultPadding),
-                              color: Color(0xFFEAEAEA),
+                              color: const Color(0xFFEAEAEA),
                               alignment: Alignment.topLeft,
-                              child: AnimatedSwitcher(
+                              child: const AnimatedSwitcher(
                                 duration: panelTransition,
-                                child: controller.homeState == HomeState.normal
-                                    ? CardShortView(controller: controller)
-                                    : CartDetailsView(controller: controller),
+                                // child: controller.homeState == HomeState.normal
+                                //     ? CardShortView(controller: controller)
+                                //     : CartDetailsView(controller: controller),
                               ),
                             ),
                           ),
                         ),
                         // Header
-                        AnimatedPositioned(
+                        const AnimatedPositioned(
                           duration: panelTransition,
-                          top: controller.homeState == HomeState.normal
-                              ? 0
-                              : -headerHeight,
+                          // top: controller.homeState == HomeState.normal
+                          //     ? 0
+                          //     : -headerHeight,
+                          top: 0,
                           right: 0,
                           left: 0,
                           height: headerHeight,

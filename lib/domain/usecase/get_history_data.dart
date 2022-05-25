@@ -1,5 +1,5 @@
-import '../entity/get_history_data_service_response.dart';
-import '../service/history_data.dart';
+import '../../data/service/history_data_service.dart';
+import '../entity/response/get_history_data_service_response.dart';
 
 abstract class GetHistoryDataUseCase {
   Future<GetHistoryDataServiceResponse> call(DateTime timeStart,DateTime timeEnd);

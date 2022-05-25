@@ -27,7 +27,7 @@ class AppRouter extends _i5.RootStackRouter {
   final Map<String, _i5.PageFactory> pagesMap = {
     WelcomePageRouter.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i1.WelcomeScreen());
+          routeData: routeData, child: const _i1.WelcomeScreen());
     },
     LoginPageRouter.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
@@ -35,7 +35,7 @@ class AppRouter extends _i5.RootStackRouter {
     },
     SignupPageRouter.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i3.SignUpScreen());
+          routeData: routeData, child: const _i3.SignUpScreen());
     },
     NavigationPageRouter.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
@@ -54,12 +54,14 @@ class AppRouter extends _i5.RootStackRouter {
           routeData: routeData, child: const _i6.ProfilePage());
     },
     HomeScreen.name: (routeData) {
+      final args = routeData.argsAs<HomeScreenArgs>(
+          orElse: () => const HomeScreenArgs());
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i7.HomeScreen());
+          routeData: routeData, child: _i7.HomeScreen(key: args.key));
     },
     RatingsRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i8.RatingsPage());
+          routeData: routeData, child: const _i8.RatingsPage());
     }
   };
 
@@ -170,10 +172,22 @@ class ProfilePageRouter extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.HomeScreen]
-class HomeScreen extends _i5.PageRouteInfo<void> {
-  const HomeScreen() : super(HomeScreen.name, path: '');
+class HomeScreen extends _i5.PageRouteInfo<HomeScreenArgs> {
+  HomeScreen({_i9.Key? key})
+      : super(HomeScreen.name, path: '', args: HomeScreenArgs(key: key));
 
   static const String name = 'HomeScreen';
+}
+
+class HomeScreenArgs {
+  const HomeScreenArgs({this.key});
+
+  final _i9.Key? key;
+
+  @override
+  String toString() {
+    return 'HomeScreenArgs{key: $key}';
+  }
 }
 
 /// generated route for

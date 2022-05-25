@@ -1,11 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:grocery_app/backbone/bloc_status.dart';
-import 'package:grocery_app/data/model/get_history_data_response.dart';
-import 'package:grocery_app/domain/entity/get_history_data_service_response.dart';
+import 'package:grocery_app/domain/entity/response/get_history_data_service_response.dart';
 import 'package:grocery_app/domain/usecase/get_history_data.dart';
-import 'package:grocery_app/domain/usecase/get_theme.dart';
-import 'package:grocery_app/domain/usecase/select_theme.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'bloc.freezed.dart';

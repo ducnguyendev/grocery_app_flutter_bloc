@@ -32,7 +32,7 @@ class HomeHeader extends StatelessWidget {
               )
             ],
           ),
-          CircleAvatar(
+          const CircleAvatar(
             backgroundColor: Colors.transparent,
             backgroundImage: AssetImage("assets/images/profile.png"),
           )

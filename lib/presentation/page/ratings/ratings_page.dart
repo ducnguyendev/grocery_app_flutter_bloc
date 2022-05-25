@@ -9,6 +9,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../backbone/bloc_status.dart';
 class RatingsPage extends StatefulWidget {
+  const RatingsPage({Key? key}) : super(key: key);
+
   @override
   _RatingsPageState createState() => _RatingsPageState();
 }
@@ -53,8 +55,8 @@ class _RatingsPageState extends State<RatingsPage> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   const CircularProgressIndicator(),
-                                  SizedBox(width: 8),
-                                  Text('loading'.tr(), style: TextStyle(color: Colors.white)),
+                                  const SizedBox(width: 8),
+                                  Text('loading'.tr(), style: const TextStyle(color: Colors.white)),
                                 ],
                               ),
                             );

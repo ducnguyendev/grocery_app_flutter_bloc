@@ -1,7 +1,9 @@
-import 'package:grocery_app/data/gateway/rest.dart';
+import '../../domain/entity/response/get_history_data_service_response.dart';
+import '../network/remote_repository/rest.dart';
 
-import '../../domain/entity/get_history_data_service_response.dart';
-import '../../domain/service/history_data.dart';
+abstract class HistoryDataService {
+  Future<GetHistoryDataServiceResponse> getHistoryData(DateTime timeStart,DateTime timeEnd);
+}
 
 class HistoryDataServiceImpl implements HistoryDataService{
   final RestGateway _gateway;

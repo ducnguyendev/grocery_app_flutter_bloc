@@ -13,7 +13,7 @@ class FavBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: radius,
-      backgroundColor: Color(0xFFE3E2E3),
+      backgroundColor: const Color(0xFFE3E2E3),
       child: SvgPicture.asset("assets/icons/heart.svg"),
     );
   }

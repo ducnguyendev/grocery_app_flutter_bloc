@@ -1,0 +1,4 @@
+enum ErrorCode {
+  success,
+  failure
+}

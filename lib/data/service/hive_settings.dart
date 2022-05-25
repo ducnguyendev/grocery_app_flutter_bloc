@@ -1,5 +1,9 @@
-import 'package:grocery_app/data/gateway/settings.dart';
-import 'package:grocery_app/domain/service/settings.dart';
+import '../network/remote_repository/settings.dart';
+
+abstract class SettingsService {
+  Future<String> selectTheme(String themeType);
+  Future<String> getTheme();
+}
 
 class HiveSettingsService implements SettingsService {
   final SettingsGateway _gateway;

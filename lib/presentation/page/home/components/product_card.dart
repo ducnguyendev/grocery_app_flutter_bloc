@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../domain/entity/Product.dart';
+import '../../../../domain/model/product.dart';
 import '../../../../../utils/constants.dart';
 import '../../../widget/fav_btn.dart';
 import '../../../widget/price.dart';

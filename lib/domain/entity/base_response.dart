@@ -1,3 +1,5 @@
+import '../../utils/enum.dart';
+
 class SimpleResponse {
   SimpleResponse({
     required this.errorMessage,
@@ -5,6 +7,6 @@ class SimpleResponse {
   });
 
   final String errorMessage;
-  final int errorCode;
+  final ErrorCode errorCode;
 
 }

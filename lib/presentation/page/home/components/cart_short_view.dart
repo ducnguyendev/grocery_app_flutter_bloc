@@ -45,7 +45,7 @@ class CardShortView extends StatelessWidget {
           backgroundColor: Colors.white,
           child: Text(
             controller.totalCartItems().toString(),
-            style: TextStyle(fontWeight: FontWeight.bold, color: primaryColor),
+            style: const TextStyle(fontWeight: FontWeight.bold, color: primaryColor),
           ),
         )
       ],

@@ -5,11 +5,10 @@ import 'package:flutter_svg/svg.dart';
 import '../../../utils/constants.dart';
 import '../../widget/rounded_button.dart';
 import '../login/components/background.dart';
-import '../login/login_screen.dart';
-import '../signup/signup_screen.dart';
-
 
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -21,7 +20,7 @@ class WelcomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text(
-                "WELCOME TO EDU",
+                "GROCERY APP",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: size.height * 0.05),

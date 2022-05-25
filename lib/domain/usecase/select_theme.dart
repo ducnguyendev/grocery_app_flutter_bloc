@@ -1,4 +1,4 @@
-import 'package:grocery_app/domain/service/settings.dart';
+import '../../data/service/hive_settings.dart';
 
 abstract class SelectThemeUseCase {
   Future<String> call(String themeType);
