@@ -73,7 +73,6 @@ class _NavigationPageState extends State<NavigationPage> {
                     'market'.tr(),
                   ),
                 ),
-
                 SalomonBottomBarItem(
                   activeIcon: Icon(
                     Icons.manage_accounts,

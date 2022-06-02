@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:grocery_app/backbone/bloc_status.dart';
 import 'package:grocery_app/backbone/dependency_injection.dart' as di;
+import 'package:grocery_app/data/pref.dart';
 import 'package:grocery_app/presentation/bloc/settings/bloc.dart';
 import 'package:grocery_app/theme/text_styles.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -83,7 +84,11 @@ class _ProfilePageState extends State<ProfilePage> {
 
                   RoundedButton(
                     text: "SIGNOUT",
-                    press: () {
+                    press: () async {
+                      final localPref = LocalPref();
+                      await localPref.clear();
+                      final memoryPref = MemoryPref();
+                      await memoryPref.clear();
                       AutoRouter.of(context).replaceNamed("presentation/welcome_screen");
                     },
                   ),

@@ -1,13 +1,32 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:grocery_app/data/pref.dart';
 
 import '../../../utils/constants.dart';
 import '../../widget/rounded_button.dart';
 import '../login/components/background.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+
+  @override
+  void initState(){
+    LocalPref pref = LocalPref();
+    pref.getString("token").then((value){
+      if(value != ''){
+        AutoRouter.of(context).replaceNamed("presentation/navigation_page");
+      }
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

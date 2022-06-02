@@ -16,15 +16,6 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository{
 
   @override
   Future<SignInResponse> signIn(SignInRequest signInRequest) async {
-    // final String uri = baseUrl + '&timeStart=${getTimestamp(timeStart)}&timeEnd=${getTimestamp(timeEnd)}';
-    // final Response response = await http.get(Uri.parse(uri));
-    // GetHistoryDataServiceResponse result = GetHistoryDataServiceResponse(response: null, errorMessage: '', errorCode: -1);
-    // if (response.statusCode == 200) {
-    //   final Map<String, dynamic> jsonResponse =
-    //   json.decode(response.body) as Map<String, dynamic>;
-    //   final GetHistoryDataResponse getHistoryDataResponse = GetHistoryDataResponse.fromJson(jsonResponse);
-    //   result = GetHistoryDataServiceResponse(response: getHistoryDataResponse, errorMessage: '', errorCode: 0);
-    // }
     final ApiClient apiClient = di.sl.get();
     final response = await apiClient.post(signInUrl,body: signInRequest.toJson());
     if (response.statusCode == 200) {
